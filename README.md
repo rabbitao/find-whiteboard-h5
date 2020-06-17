@@ -10,7 +10,8 @@ $ npm install find-whiteboard
 import Whiteboard from 'find-whiteboard'
 /** 创建白板对象
  * @param param: {
- *                bind: object find曲谱对象
+ *                svgScore: object find曲谱对象
+ *                canvas: HtmlCanvasElement
  *                emitData?: function(object) 接收画板绘制数据的函数 serverMode为true才会触发
  *                color?: string 画笔颜色 default: #FF799F
  *                lineSize?: number 线条宽度 default: 4
@@ -19,13 +20,28 @@ import Whiteboard from 'find-whiteboard'
  *                }
  */
 const whiteboard = new Whiteboard({
-  bind: findStaffObject,
+  svgScore: findStaffObject,
+  canvas: HtmlCanvasElement,
   emitData?: (args: emitData) => any, 
   color?: string, 
   lineSize?: number, 
   serverMode?: boolean, 
   environment?: string 
 })
+```
+
+``` javascript
+/**
+ * 切换激光笔模式
+ */
+  whiteboard.OPERATING_MODE = OPERATING_MODE.LASER
+```
+
+``` javascript
+/**
+ * 切换画板模式
+ */
+  whiteboard.OPERATING_MODE = OPERATING_MODE.CANVAS
 ```
 
 ``` javascript
