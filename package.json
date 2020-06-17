@@ -1,0 +1,27 @@
+{
+  "name": "find-whiteboard",
+  "version": "2.1.8",
+  "private": false,
+  "main": "./dist/whiteBoard.js",
+  "types": "./dist/types/whiteBoard.d.ts",
+  "author": "rabbitao",
+  "license": "MIT",
+  "scripts": {
+    "lint": "tslint --fix src/**/*.ts src/**/*.tsx",
+    "tsc": "tsc",
+    "types": "tsc -d --emitDeclarationOnly --allowJs false --declarationDir ./dist/types/",
+    "build": "npm run tsc && npm run types"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.5",
+    "clean-webpack-plugin": "^1.0.1",
+    "prettier": "^1.16.4",
+    "ts-lint": "^4.5.1",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.11.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.0.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.3.7"
+  }
+}
